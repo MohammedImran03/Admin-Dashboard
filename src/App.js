@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Sidebar from "./Component/Sidebar/Sidebar";
+import Maindash from "./Component/Maindash/Maindash";
+import Navbar from "./Component/Navbar/Navbar";
+import Component from './Component/Componentboard/Component';
+import Colors from "./Component/Utility/Colors";
+import Borders from "./Component/Utility/Borders";
+import Charts from "./Component/Charts/Charts";
+import Table from "./Component/Table/Table";
+
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Tab } from "bootstrap";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="body">
+      <div className=" AppGlass">
+        <BrowserRouter>
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Navbar/>} />
+            <Route path="/dashboard" element={<Maindash />} />
+            <Route path='/Navbar' element={<Navbar/>}/>
+            <Route path='/Components' element={<Component/>}/>
+            <Route path='/Utilitycolors' element={<Colors/>}/>
+            <Route path='/Utilityborders' element={<Borders/>}/>
+            <Route path='/Charts' element={<Charts/>}/>
+            <Route path='/Table' element={<Table/>}></Route>
+        
+            {/* <div className='container Mainmenu'>
+   
+   </div> */}
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

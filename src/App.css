@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.body {
+  background: linear-gradient(150deg, rgb(242, 153, 208),rgb(242, 242, 140),rgb(109, 109, 227));
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+.AppGlass{
+ display: grid;
+ height:98%;
+ width: 99%;
+ border-radius: 1.5rem;
+ background-color: rgb(177, 238, 238);
+ overflow: hidden;
+ grid-template-columns: 10rem auto 0rem;
+}
+
+.Mainmenu{
+  border: 2px solid black;
+  /* width: 65rem;
+  height: 30rem;
+  position: fixed;
+  top: 6rem;
+  left: 11rem; */
+}
+
+@media screen and (max-width: 1200px) {
+  .AppGlass{
+    grid-template-columns: 15% 83% auto;
+    overflow-y: scroll;
+  } 
+}
+
+/* @media screen and (max-width: 768px) {
+  .AppGlass{
+    grid-template-columns: 1fr;
+  }
+} */
